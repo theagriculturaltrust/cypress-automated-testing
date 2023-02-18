@@ -1,4 +1,3 @@
-alert("test")
 const { exec } = require('node:child_process')
 
 // run the `ls` command using exec
