@@ -1,7 +1,7 @@
 const { exec } = require('node:child_process')
 
 // run the `ls` command using exec
-exec('npm cypress run --key 7bed1257-f64f-4ebc-8c57-d6300d1b686f --record', (err, output) => {
+exec('npx cypress run --key 7bed1257-f64f-4ebc-8c57-d6300d1b686f --record', (err, output) => {
     // once the command has completed, the callback function is called
     if (err) {
         // log and return if we encounter an error
