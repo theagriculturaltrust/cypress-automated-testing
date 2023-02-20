@@ -44,7 +44,7 @@ describe('testing www.farmersjournal.ie/subscribe.php ', () => {
   it('checking PLAN --Digital Standard-- component ', () => {
     cy.wait(500)
 
-    cy.get('#slot-print-standard').should('include.text', 'Digital Standard-- forcing error--')
+    cy.get('#slot-print-standard').should('include.text', 'Digital Standard')
   })
 
   it('checking PLAN --Digital Premium-- component ', () => {
