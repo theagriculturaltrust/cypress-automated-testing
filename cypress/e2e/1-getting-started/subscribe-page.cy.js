@@ -42,9 +42,9 @@ describe('testing www.farmersjournal.ie/subscribe.php ', () => {
 
 
   it('checking PLAN --Digital Standard-- component ', () => {
-    //cy.wait(500)
+    cy.wait(500)
 
-    cy.get('#slot-print-standard').should('include.text', 'Digital Standard-- forcing error')
+    cy.get('#slot-print-standard').should('include.text', 'Digital Standard-- forcing error--')
   })
 
   it('checking PLAN --Digital Premium-- component ', () => {
@@ -58,31 +58,6 @@ describe('testing www.farmersjournal.ie/subscribe.php ', () => {
   it('checking PLAN --Print Premium-- component ', () => {
 
     cy.get('#slot-digital-premium').should('include.text', 'Print Premium') 
-
-
-
-
-
-        //alert(test)
-        /*axios.get('https://www.farmersjournal.ie/cypress-automated-tests/cypress-mail.php')
-          .then(function (response) {
-            // handle success
-            console.log(response);
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
-          .finally(function () {
-            // always executed
-          });*/
-
-
-
-
-
-
-  
 
   })
 
