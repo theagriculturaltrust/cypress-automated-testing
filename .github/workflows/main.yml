@@ -19,3 +19,4 @@ jobs:
         timeout-minutes: 10
         with:
           browser: firefox
+          config-file: cypress.config.js
