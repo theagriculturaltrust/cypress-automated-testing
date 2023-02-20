@@ -7,7 +7,7 @@ module.exports = defineConfig({
       // e2e testing node events setup code
       .run({
          // the path is relative to the current working directory
-         spec: './cypress/e2e/1-geting-started/subscribe-page.cy',
+          './cypress/e2e/1-geting-started/subscribe-page.cy',
        })
     },
   },
