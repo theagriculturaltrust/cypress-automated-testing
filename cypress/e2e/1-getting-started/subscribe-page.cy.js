@@ -57,7 +57,7 @@ describe('testing www.farmersjournal.ie/subscribe.php ', () => {
 
   it('checking PLAN --Print Premium-- component ', () => {
 
-    cy.get('#slot-digital-premium').should('include.text', 'Print Premium') 
+    cy.get('#slot-digital-premium').should('include.text', 'Print Premium-') 
 
   })
 
