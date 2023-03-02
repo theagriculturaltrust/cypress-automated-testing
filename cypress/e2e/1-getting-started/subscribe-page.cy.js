@@ -1,22 +1,10 @@
 import axios from 'axios';
 
-
-/// <reference types="cypress" />
-
-// Welcome to Cypress!
-//
-// This spec file contains a variety of sample tests
-// for a todo list app that are designed to demonstrate
-// the power of writing tests in Cypress.
-//
-// To learn more about how Cypress works and
-// what makes it such an awesome testing tool,
-// please read our getting started guide:
 // https://on.cypress.io/introduction-to-cypress
 
-describe('testing www.farmersjournal.ie/subscribe.php ', () => {
+describe('testing www.farmersjournal.ie ', () => {
   beforeEach(() => {
-    cy.visit('https://www.farmersjournal.ie/subscribe.php')
+    cy.on('uncaught:exception', () => false)
   })
 
 
@@ -24,7 +12,7 @@ describe('testing www.farmersjournal.ie/subscribe.php ', () => {
       //console.log(this.currentTest.title)
       console.log(this.currentTest.state)
       if (this.currentTest.state != 'passed') {
-        axios.get(`https://www.farmersjournal.ie/cypress-automated-tests/cypress-mail.php?test_title=${this.currentTest.title}&domain=farmersjournal_ie&where=subscribe.php`)
+        axios.get(`https://www.farmersjournal.ie/cypress-automated-tests/cypress-mail.php?test_title=${this.currentTest.title}&domain=farmersjournal_ie&where=_`)
           .then(function (response) {
             // handle success
             console.log(response);
@@ -41,28 +29,62 @@ describe('testing www.farmersjournal.ie/subscribe.php ', () => {
   })
 
 
-  it('checking PLAN --Digital Standard-- component ', () => {
-    cy.wait(500)
-
-    cy.get('#slot-print-standard').should('include.text', 'Digital Standard')
+  it('checking HOME PAGE ', () => {
+    cy.visit('https://www.farmersjournal.ie/index.php', { timeout: 60000 })
+    cy.get('#home-page-top-stories-title').should('not.be.empty') 
+    cy.get('.video-box').should('not.be.empty') 
   })
 
-  it('checking PLAN --Digital Premium-- component ', () => {
+  it('checking HOME PAGE - Videos component', () => {
+    cy.on('uncaught:exception', () => false)
+    cy.visit('https://www.farmersjournal.ie/index.php', { timeout: 60000 })
+  })  
+
+
+ 
+  it('checking subscribe.php -- PLANS -- component ', () => {
+    cy.visit('https://www.farmersjournal.ie/subscribe.php', { timeout: 10000 })
+    cy.get('#slot-print-standard').should('include.text', 'Digital Standard---')
     cy.get('#slot-print-premium').should('include.text', 'Digital Premium')
-  })
-
-  it('checking PLAN --Print Standard-- component ', () => {
     cy.get('#slot-digital-standard').should('include.text', 'Print Standard')
-  })
-
-  it('checking PLAN --Print Premium-- component ', () => {
-
     cy.get('#slot-digital-premium').should('include.text', 'Print Premium') 
-
   })
 
 
+  it('checking login proccess ', () => {
 
+    cy.on('uncaught:exception', () => false)
+
+
+    cy.visit('https://www.farmersjournal.ie/information/contact-us/150935', { timeout: 10000 })
+    
+    cy.get('#onetrust-accept-btn-handler').click({ force: true })
+    cy.get('#link-login-btn').click({ force: true })
+    cy.get("#email-main").clear().type("lazzi@farmersjournal.ie")
+    cy.get("#password-main").clear().type("ligiano01")
+     // when the password is correct and the login happens, it generates a failure in the core of cypress because it does not get the return in the .location of the javascript, and then cypress interrupts the test, it does not give failure or success
+     // if login does not occur, and #login-feedback receives the login failure string, then cypress ends the test and takes error as status and sends the email
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')    
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.reload()
+
+  })
 
 
 
