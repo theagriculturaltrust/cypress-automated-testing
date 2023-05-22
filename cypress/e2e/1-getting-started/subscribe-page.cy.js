@@ -82,6 +82,8 @@ describe('testing www.farmersjournal.ie ', () => {
     cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
     cy.get('#sign-in-btn').click({ force: true })
     cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
+    cy.get('#sign-in-btn').click({ force: true })
+    cy.get('#login-feedback', { timeout: 10000 }).should('be.empty')
     cy.reload()
 
   })
