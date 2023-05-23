@@ -45,6 +45,12 @@ it('checking SUBSCRIBE SUCCESS - IF STATUS 200', () => {
     .its('status')
     .should('equal', 200); // check if the response status is 200 (OK)
 });  
+  
+it('checking SUBSCRIBEFORM STUDENT - IF STATUS 200', () => {
+  cy.request('https://www.farmersjournal.ie/subscribeform-student.php?select=2&gf=0&substype=premium')
+    .its('status')
+    .should('equal', 200); // check if the response status is 200 (OK)
+});    
 
  
   it('checking subscribe.php -- PLANS -- component ', () => {
