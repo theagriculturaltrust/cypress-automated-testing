@@ -68,6 +68,31 @@ it('checking SUBSCRIBE SUCCESS - IF STATUS 200', () => {
     .should('equal', 200); // check if the response status is 200 (OK)
 });
 
+
+
+
+
+  it('checking KH links', () => {
+    cy.visit('https://www.farmersjournal.ie/knowledgehub.php')
+
+    // find all hub links
+    cy.get('.knowledgehub-list a').each(($link) => {
+      const linkHref = $link.attr('href')
+
+      // doing a requisition to the link
+      cy.request({
+        method: 'HEAD',
+        url: linkHref,
+        failOnStatusCode: false, // rule: dont fail 404, if fail send test dont passed by email
+      }).then((response) => {
+        expect(response.status).to.not.eq(404, `What link is brocked? ${linkHref}`)
+      })
+    })
+  });
+
+
+  
+
 /* it('checking login proccess ', () => {
 
     cy.on('uncaught:exception', () => false)
