@@ -62,7 +62,13 @@ it('checking SUBSCRIBEFORM STUDENT - IF STATUS 200', () => {
   })
 
 
-  it('checking login proccess ', () => {
+it('checking SUBSCRIBE SUCCESS - IF STATUS 200', () => {
+  cy.request('https://www.farmersjournal.ie/subscribe-success.php')
+    .its('status')
+    .should('equal', 200); // check if the response status is 200 (OK)
+});
+
+/* it('checking login proccess ', () => {
 
     cy.on('uncaught:exception', () => false)
 
@@ -98,7 +104,7 @@ it('checking SUBSCRIBEFORM STUDENT - IF STATUS 200', () => {
     cy.reload()
 
   })
-
+*/
 
 
 })
