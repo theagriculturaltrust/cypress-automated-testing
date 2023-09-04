@@ -52,6 +52,15 @@ it('checking SUBSCRIBEFORM STUDENT - IF STATUS 200', () => {
     .should('equal', 200); // check if the response status is 200 (OK)
 });    
 
+
+it('checking STUDENT HUB - IF STATUS 200', () => {
+  cy.request('https://www.farmersjournal.ie/schools-hub.php')
+    .its('status')
+    .should('equal', 200); // check if the response status is 200 (OK)
+});
+
+
+  
  
   it('checking subscribe.php -- PLANS -- component ', () => {
     cy.visit('https://www.farmersjournal.ie/subscribe.php', { timeout: 10000 })
