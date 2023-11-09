@@ -89,6 +89,18 @@ it('GARDEN.IE checking subscribe.php -- PLANS -- component', () => {
 });
 
 
+  it('ICM checking subscribe.php -- PLANS -- component', () => {
+  cy.visit('https://subscribe2.irishcountrymagazine.ie/subscribe.php', { timeout: 1000 });
+  cy.get('#slot-digital-standard').should('include.text', 'Print & digital');
+  cy.get('#slot-print-premium').should('include.text', 'Digital');
+  cy.get('#slot-complete').should('include.text', 'Buy as a gift');
+  cy.get('.subs-plan-box-content').should(($element) => {
+    const backgroundColor = $element.css('background-color');
+    expect(backgroundColor).to.equal('#fff'); // Use the RGB format directly
+  });
+});
+
+
 
 
   
