@@ -79,7 +79,7 @@ it('checking SUBSCRIBE SUCCESS - IF STATUS 200', () => {
 
 
 it('GARDEN.IE checking subscribe.php -- PLANS -- component', () => {
-  cy.visit('https://subscribe.garden.ie/', { timeout: 1000 });
+  cy.visit('https://subscribe.garden.ie/', { timeout: 10000 });
   cy.get('#slot-digital-standard').should('include.text', 'Get it delivered');
   cy.get('#slot-complete').should('include.text', 'Buy as a gift');
   cy.get('.subs-plan-box-content').should(($element) => {
