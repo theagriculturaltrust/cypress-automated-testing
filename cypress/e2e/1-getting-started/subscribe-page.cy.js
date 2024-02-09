@@ -40,7 +40,7 @@ describe('testing www.farmersjournal.ie ', () => {
     cy.visit('https://www.farmersjournal.ie/index.php', { timeout: 60000 })
   })  
 
-it('checking SUBSCRIBE SUCCESS - IF STATUS 200', () => {
+it('checking SUBSCRIBE SUCCESS - IF STATUS is 200', () => {
   cy.request('https://www.farmersjournal.ie/subscribe-success.php')
     .its('status')
     .should('equal', 200); // check if the response status is 200 (OK)
