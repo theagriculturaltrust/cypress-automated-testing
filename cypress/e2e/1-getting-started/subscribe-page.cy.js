@@ -173,6 +173,14 @@ it('GARDEN.IE checking subscribe.php -- PLANS -- component', () => {
 
 
 
+describe('Check if the first <span class="label editor"> inside .most-read-section is not empty', () => {
+  it('should have non-empty text', () => {
+    cy.visit('https://www.theirishfield.ie/'); 
+
+    // Find the first <span class="label editor"> inside the .most-read-section and check if it has non-empty text
+    cy.get('.most-read-section').find('span.label.editor').first().should('not.be.empty').and('have.text');
+  });
+});
 
 
 
