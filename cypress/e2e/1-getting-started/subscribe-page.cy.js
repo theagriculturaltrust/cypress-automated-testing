@@ -174,6 +174,24 @@ it('GARDEN.IE checking subscribe.php -- PLANS -- component', () => {
 
 
 
+describe('Check IFJ most read section loading', () => {
+  it('should exist and have non-empty text', () => {
+    cy.visit('https://www.farmersjournal.ie/'); 
+
+    // Check if the element exists
+    cy.get('.most-read-section').find('.title-smallerline').should('exist');
+
+    // If the element exists, check if it has non-empty text
+    cy.get('.most-read-section').find('.title-smallerline').first().then($span => {
+      if ($span.length > 0) {
+        cy.wrap($span).should('not.be.empty').and('have.text');
+      }
+    });
+  });
+});
+
+
+
 describe('Check TIF most read section loading', () => {
   it('should exist and have non-empty text', () => {
         cy.visit('https://www.theirishfield.ie/'); 
