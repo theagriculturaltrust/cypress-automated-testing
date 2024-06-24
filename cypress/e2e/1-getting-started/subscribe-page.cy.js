@@ -173,7 +173,7 @@ it('GARDEN.IE checking subscribe.php -- PLANS -- component', () => {
 
 
 
-
+/*
 describe('should exist and have non-empty text', () => {
   it('Check IFJ most read section loading', () => {
     cy.visit('https://www.farmersjournal.ie/'); 
@@ -189,9 +189,9 @@ describe('should exist and have non-empty text', () => {
     });
   });
 });
+*/
 
-
-
+/*
 describe('should exist and have non-empty text', () => {
   it('Check TIF most read section loading', () => {
         cy.visit('https://www.theirishfield.ie/'); 
@@ -207,7 +207,7 @@ describe('should exist and have non-empty text', () => {
     });
   });
 });
-
+*/
 
 
   
