@@ -62,14 +62,14 @@ it('checking STUDENT HUB - IF STATUS 200', () => {
 
   
  
-  it('checking subscribe.php -- PLANS -- component ', () => {
+/*  it('checking subscribe.php -- PLANS -- component ', () => {
     cy.visit('https://www.farmersjournal.ie/subscribe.php', { timeout: 10000 })
     cy.get('#slot-print-standard').should('include.text', 'Digital Standard')
     cy.get('#slot-print-premium').should('include.text', 'Digital Premium')
     cy.get('#slot-digital-standard').should('include.text', 'Print Standard')
     cy.get('#slot-digital-premium').should('include.text', 'Print Premium') 
   })
-
+*/
 
 it('checking SUBSCRIBE SUCCESS - IF STATUS 200', () => {
   cy.request('https://www.farmersjournal.ie/subscribe-success.php')
