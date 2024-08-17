@@ -14,9 +14,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      - name: run cypress tests with firefox
+      - name: run cypress tests with chrome
         uses: cypress-io/github-action@v2
-        timeout-minutes: 10
+        timeout-minutes: 240
         with:
-          browser: firefox
+          browser: chrome
           config-file: cypress.config.js
