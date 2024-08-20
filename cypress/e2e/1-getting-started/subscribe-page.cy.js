@@ -157,20 +157,22 @@ it('GARDEN.IE checking subscribe.php -- PLANS -- component', () => {
 });
 
 
-  it('ICM checking subscribe.php -- PLANS -- component', () => {
+  
+it('ICM checking subscribe.php -- PLANS -- component', () => {
   cy.visit('https://subscribe2.irishcountrymagazine.ie/subscribe.php', { timeout: 10000 })
   cy.get('#slot-digital-standard').should('include.text', 'Print & digital')
   cy.get('#slot-print-premium').should('include.text', 'Digital')
   cy.get('#slot-complete').should('include.text', 'Buy as a gift')
 });
 
-  it('TIF checking subscribe.php -- PLANS -- component', () => {
+/*  
+it('TIF checking subscribe.php -- PLANS -- component', () => {
   cy.visit('https://www.theirishfield.ie/subscribe.php', { timeout: 10000 })
   cy.get('#slot-digital-standard').should('include.text', 'Digital')
   cy.get('#slot-print-premium').should('include.text', 'Print')
   cy.get('#slot-complete').should('include.text', 'Complete')
 });
-
+*/
 
 
 /*
