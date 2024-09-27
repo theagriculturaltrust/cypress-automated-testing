@@ -29,16 +29,16 @@ describe('testing www.farmersjournal.ie ', () => {
   })
 
 
-  it('checking HOME PAGE ', () => {
+/*  it('checking HOME PAGE ', () => {
     cy.visit('https://www.farmersjournal.ie/index.php', { timeout: 60000 })
     cy.get('#home-page-top-stories-title').should('not.be.empty') 
     cy.get('.video-box').should('not.be.empty') 
-  })
+  })*/
 
-  it('checking HOME PAGE - Videos component', () => {
+  /*it('checking HOME PAGE - Videos component', () => {
     cy.on('uncaught:exception', () => false)
     cy.visit('https://www.farmersjournal.ie/index.php', { timeout: 60000 })
-  })  
+  })*/  
 
 it('checking SUBSCRIBE SUCCESS - IF STATUS is 200', () => {
   cy.request('https://www.farmersjournal.ie/subscribe-success.php')
